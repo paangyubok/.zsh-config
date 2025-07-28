@@ -6,6 +6,7 @@
 zinit ice lucid wait='1'
 zinit light skywind3000/z.lua
 
+autoload -Uz compinit; compinit
 zinit light Aloxaf/fzf-tab
 zinit light paulirish/git-open
 zinit light zsh-users/zsh-completions
@@ -67,10 +68,11 @@ zinit as="null" wait="1" lucid from="gh-r" for \
 zinit ice mv="*.zsh -> _fzf" as="completion"
 zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/completion.zsh'
 zinit snippet 'https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh'
-zinit ice wait"0" lucid from"gh-r" as"program" \
-    bpick"*x86_64-unknown-linux-musl.tar.gz" \
-    extract"" \
-    mv"eza* -> eza"
-zinit light eza-community/eza
+# 以下安装方式有可能导致非本地用户显示为uid, 建议使用cargo安装
+# zinit ice wait"0" lucid from"gh-r" as"program" \
+#     bpick"*x86_64-unknown-linux-musl.tar.gz" \
+#     extract"" \
+#     mv"eza* -> eza"
+# zinit light eza-community/eza
 # ---- 加载完了 ----
 
